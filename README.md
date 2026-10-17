@@ -1,108 +1,61 @@
-<img src="https://raw.githubusercontent.com/wikiclubtechuu/WikiClub-Tech-UU/refs/heads/main/public/wikiclub.png" style="width:100%; align:center"/>
+# WikiClub Tech-UU
 
+Official website for WikiClub Tech-UU at United University.
 
-# Wiki Club Tech - United University
+## Repository structure
 
-> **Empowering students through open-source collaboration and knowledge sharing**
+```text
+.github/workflows/     # GitHub Pages deployment workflow
+app/                   # Next.js App Router pages and routes
+components/            # Shared UI and feature components
+data/                  # Site content and team data
+lib/                   # Shared helpers
+public/                # Static assets, blog images, team images and site metadata
+types/                 # Shared TypeScript types
+utils/                 # Domain-specific utilities
 
-Welcome to the official repository for the **Wiki Club Tech** website at United University! This platform serves as the digital headquarters for our vibrant community of students passionate about open-source development, collaborative learning, and technological innovation.
+next.config.ts         # Next.js static-export configuration
+tsconfig.json          # TypeScript configuration
+package.json           # Project scripts and dependencies
+```
 
-## 🌟 About Our Club
+The repository intentionally keeps a single canonical source tree at the project root. Legacy duplicate `src/` content and duplicate root-level copies of assets are not used.
 
-Wiki Club Tech is a student-driven community dedicated to fostering an inclusive environment where learners of all levels can explore, practice, and contribute to open-source projects. We believe in the transformative power of collaboration and strive to make open-source development accessible to everyone, regardless of their technical background.
+## Current Teams page
 
-### Our Mission
-- **Learn**: Provide resources and guidance for students new to open-source
-- **Collaborate**: Foster teamwork through coding projects and hackathons  
-- **Contribute**: Enable meaningful contributions to real-world open-source projects
-- **Inspire**: Create a supportive community that encourages innovation and growth
+The `/teams` page contains the current WikiClub Tech-UU 2026–27 team, including:
 
-## ✨ What We Offer
+- Campus Envoys
+- Mentors
+- Team Leads
+- Volunteers
+- Previous team archive: **Wikiclub Tech-UU 2025-26**
 
-### 🏠 **Community Hub**
-A welcoming homepage introducing our club's mission, values, and opportunities for student engagement.
+The current Teams layout keeps Campus Envoys centered, Mentors in broad horizontal cards, and Volunteers in a compact five-column desktop grid.
 
-### 📅 **Events & Workshops**
-Stay connected with our dynamic calendar featuring:
-- Technical workshops and coding bootcamps
-- Open-source contribution sessions
-- Hackathons and coding competitions
-- Guest speaker sessions with industry experts
+## Development
 
-### 📚 **Learning Resources**
-Curated collection of tutorials, documentation, and tools to jumpstart your open-source journey:
-- Beginner-friendly guides
-- Best practices and coding standards
-- Tool recommendations and setup guides
-- Project ideas and contribution opportunities
+```bash
+npm ci
+npm run dev
+```
 
-### 📝 **Club Blog**
-Regular updates featuring:
-- Member success stories and spotlights
-- Technical articles and tutorials
-- Club announcements and achievements
-- Industry insights and trends
+Production/static build:
 
-### 👥 **Team Directory**
-Meet our dedicated team members and learn about their contributions to the open-source community.
+```bash
+npm run build
+```
 
-## 🚀 Tech Stack
+## GitHub Pages
 
-This modern web application is built using cutting-edge technologies:
+The project is configured for a static Next.js export and GitHub Pages deployment at:
 
-- **Framework**: [Next.js 15](https://nextjs.org/) - React-based full-stack framework
-- **Language**: [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- **Animations**: [Framer Motion](https://www.framer.com/motion/) - Production-ready motion library
-- **Icons**: [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/)
-- **Content**: [React Markdown](https://github.com/remarkjs/react-markdown) - Markdown rendering
+`https://mishraji0519.github.io/teams-pages/`
 
-## 🌐 Features
+The repository's Pages source must be set to **GitHub Actions** under **Settings → Pages → Build and deployment** before the deployment workflow can publish the site.
 
-- **Responsive Design**: Optimized for all devices and screen sizes
-- **Modern UI/UX**: Clean, intuitive interface with smooth animations
-- **Fast Performance**: Server-side rendering with Next.js optimization
-- **SEO Friendly**: Built-in SEO optimization and metadata management
-- **Accessible**: Following web accessibility standards
-- **Blog System**: Dynamic markdown-based blog functionality
-- **Team Showcase**: Interactive team member profiles
+## Notes
 
-## 🤝 Contributing
-
-We welcome contributions from all students and community members! Whether you're taking your first steps in programming or you're an experienced developer, there are many ways to get involved:
-
-### Getting Started
-1. **Fork** this repository
-2. **Clone** your forked repository to your local machine
-3. Create a **new branch** for your feature or bug fix
-4. Make your changes and **commit** them with descriptive messages
-5. **Push** your changes to your forked repository
-6. Create a **Pull Request** to the main branch
-
-### Ways to Contribute
-- 🐛 Report bugs and issues
-- 💡 Suggest new features or improvements
-- 📝 Improve documentation
-- 🎨 Enhance UI/UX design
-- ✨ Add new functionality
-- 🧪 Write and improve tests
-
-For detailed contribution guidelines, please read our `CONTRIBUTING.md` file.
-
-## 📄 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details. This means you're free to use, modify, and distribute this code as long as you include the original copyright notice.
-
-## 📬 Get In Touch
-
-- **University**: United University, Prayagraj
-- **Repository**: [github.com/lazyshrey/WikiClub-Tech-UU](https://github.com/lazyshrey/WikiClub-Tech-UU)
-- **Issues**: Found a bug? [Create an issue](https://github.com/lazyshrey/WikiClub-Tech-UU/issues)
-- **Discussions**: Join our [GitHub Discussions](https://github.com/lazyshrey/WikiClub-Tech-UU/discussions)
-
----
-
-<div align="center">
-  <p><strong>Made with ❤️ by the Wiki Club Tech community</strong></p>
-  <p><em>Empowering the next generation of open-source contributors</em></p>
-</div>
+- Next.js static export is enabled in `next.config.ts`.
+- GitHub Pages builds temporarily exclude the server API routes because Pages is static hosting.
+- `@/*` imports resolve from the repository root.
