@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://wikiclub.tech/sitemap.xml
